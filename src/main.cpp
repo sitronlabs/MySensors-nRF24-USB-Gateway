@@ -1,18 +1,23 @@
 /* Config */
 #include "../cfg/config.h"
 
-/* Arduino Libraries */
+/* Arduino libraries */
 #include <Arduino.h>
 #include <MySensors.h>
 
+/* Avr libraries */
+#include <avr/wdt.h>
+
 void setup() {
-    // Setup locally attached sensors
+
+    /* Enable watchdog to prevent the gateway from becoming unresponsive */
+    wdt_enable(WDTO_8S);
 }
 
 void presentation() {
-    // Present locally attached sensors
 }
 
 void loop() {
-    // Send locally attached sensor data here
+    /* There is no need to explicitely pet the watchdog here
+     * as MySensors does it before every call of the loop function */
 }
