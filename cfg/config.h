@@ -10,7 +10,8 @@
  * @see https://www.mysensors.org/build/advanced_gateway */
 #define MY_DEBUG
 #define MY_RADIO_RF24
-#define MY_RF24_PA_LEVEL RF24_PA_MAX
+#define MY_RF24_DATARATE RF24_250KBPS  // Default speed
+#define MY_RF24_PA_LEVEL RF24_PA_LOW   // Increase transmit power if necessary, but RF24_PA_MAX can lead to frame loss because of unstable power rail
 #define MY_RF24_CE_PIN 9
 #define MY_RF24_CS_PIN 10
 #define MY_GATEWAY_FEATURE
